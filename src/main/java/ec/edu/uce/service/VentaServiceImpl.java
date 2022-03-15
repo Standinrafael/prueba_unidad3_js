@@ -1,5 +1,8 @@
 package ec.edu.uce.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +36,12 @@ public class VentaServiceImpl implements IVentaService {
 	public void borrarVenta(Integer id) {
 		// TODO Auto-generated method stub
 		this.ventaRepo.borrarVenta(id);
+	}
+
+	@Override
+	public List<Venta> buscarPorFecha(LocalDateTime fecha) {
+		// TODO Auto-generated method stub
+		return this.ventaRepo.buscarPorFecha(fecha);
 	}
 
 }

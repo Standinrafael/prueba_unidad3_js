@@ -1,5 +1,10 @@
 package ec.edu.uce.service;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +23,7 @@ public class ProductoServiceImpl implements IProductoService {
 	}
 
 	@Override
+	@Transactional(value=TxType.SUPPORTS)
 	public void actualizarProducto(Producto producto) {
 		// TODO Auto-generated method stub
 		this.productoRepo.actualizarProducto(producto);
@@ -40,5 +46,26 @@ public class ProductoServiceImpl implements IProductoService {
 		// TODO Auto-generated method stub
 		return this.productoRepo.buscarProductoBarra(codigoBarra);
 	}
+
+	@Override
+	public Producto buscarProductoStock(Integer stock) {
+		// TODO Auto-generated method stub
+		return this.productoRepo.buscarProductoStock(stock);
+	}
+
+	@Override
+	public List<Producto> traerProductos() {
+		// TODO Auto-generated method stub
+		return this.productoRepo.traerProductos()
+				;
+	}
+
+	@Override
+	public Producto buscarProductoPorTresParametros(String barra, String nombre, Integer cantidad) {
+		// TODO Auto-generated method stub
+		return this.productoRepo.buscarProductoPorTresParametros(barra, nombre, cantidad);
+	}
+
+
 
 }

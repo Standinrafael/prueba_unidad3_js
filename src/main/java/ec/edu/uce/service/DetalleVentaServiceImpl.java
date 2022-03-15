@@ -1,5 +1,7 @@
 package ec.edu.uce.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,12 @@ public class DetalleVentaServiceImpl implements IDetalleVentaService {
 	public void borrarDetalle(Integer id) {
 		// TODO Auto-generated method stub
 		this.detalleRepo.borrarDetalle(id);
+	}
+
+	@Override
+	public List<DetalleVenta> traerTodo() {
+		// TODO Auto-generated method stub
+		return this.detalleRepo.traerTodo();
 	}
 
 }

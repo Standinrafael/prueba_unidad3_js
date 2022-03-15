@@ -1,5 +1,7 @@
 package ec.edu.uce.repository;
 
+import java.util.List;
+
 import ec.edu.uce.modelo.Producto;
 
 public interface IProductoRepo {
@@ -10,5 +12,12 @@ public interface IProductoRepo {
 	void borrarProducto(Integer id);
 	
 	Producto buscarProductoBarra(String codigoBarra);
+	Producto buscarProductoStock(Integer stock);
+	
+	List<Producto> traerProductos();
+	
+	Producto buscarProductoPorTresParametros(String barra, String nombre, Integer cantidad);
+	
+	
 
 }

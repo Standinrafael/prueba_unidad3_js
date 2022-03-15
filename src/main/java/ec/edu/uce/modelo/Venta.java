@@ -24,7 +24,7 @@ public class Venta {
 	private Integer id;
 	
 	@Column(name="vent_numero")
-	private String numero;
+	private Integer numero;
 	
 	@Column(name="vent_fecha", columnDefinition="TIMESTAMP")
 	private LocalDateTime fecha;
@@ -47,11 +47,11 @@ public class Venta {
 		this.id = id;
 	}
 
-	public String getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 
